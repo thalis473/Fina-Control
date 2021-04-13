@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon">
+    <title>Fina$Control</title>
+    <link rel="stylesheet" href="./sytle.css">
+</head>
+
+<body>
+    <header >
+        <img id="logo" src="./assests/Finanaças controladas.png" alt="Logo Control Fina">
+    </header>
+    <main  class="container">
+        <section id="balance">
+            <h2 class="sr-only">Balanço</h2>
+
+            <div class="cards">
+                <h3>
+                  <span>
+                    Entradas
+                  </span>  
+                  <img src="./assests/income.svg" alt="imagem de entrada">
+                </h3>
+                <p id="income">R$ 0,00</p>
+            </div>
+
+            <div class="cards">
+                <h3>
+                    <span>
+                      Saida
+                    </span>  
+                    <img src="./assests/expense.svg" alt="imagem de saida">
+                  </h3>
+                <p id="expense">R$ 0,00</p>
+            </div>
+            <div class="cards total">
+                <h3>
+                    <span>
+                      Total
+                    </span>  
+                    <img src="./assests/total.svg" alt="Imagem de total">
+                  </h3>
+                <p id="totalDisplay">R$ 0,00</p>
+            </div>
+
+        </section>
+        <section id="transactions">
+            <h2 class="sr-only">Transações</h2>
+            <a href="#" class="button" onclick="Caixa.Open()">
+               Adicionar Transações +
+            </a>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th> Descrição</th>
+                        <th> Valor</th>
+                        <th> Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+    
+                </tbody>
+            </table>
+        </section>
+       
+       
+    </main>
+
+    <!--modal-->
+
+    <div class="modal-overlay ">
+        <div class="modal">
+           <div class="form">
+               <h2>Nova Transação</h2>
+               <form action="" onsubmit="Form.submit(event)">
+                   <div class="input-group">
+                       <label class="sr-only" for="descripition">Descrição</label>
+                       <input type="text" 
+                       name="descripition"
+                        id="descripition"
+                        placeholder="Descrição"/>
+                   </div>
+                   <div class="input-group">
+                    <label class="sr-only" for="amount">Valor</label>
+                    <input type="number"
+                    step="0.01" 
+                    name="amount"
+                     id="amount"
+                     placeholder="0,00"/>
+                     <small class="help"> Use o sinal-(negativo) para despesas e , (virgula) para casas decimais</small>
+                </div>
+
+                <div class="input-group">
+                    <label class="sr-only" for="date">Data</label>
+                    <input type="date" 
+                    name="date"
+                     id="date"/>
+                </div>
+                <div class="input-group actions">
+                    <a href="#" class="button-cancel"onclick="Caixa.Close()">Cancelar</a>
+                    <button>Salvar</button>
+                </div>
+
+               </form>
+
+           </div>
+        </div>
+    </div>
+<!--Fim-->
+
+    <footer >
+        <p> Fina$ Control</p>
+    </footer>
+
+    
+    <script src="./efect.js"></script>
+</body>
+
+</html>
+
